@@ -31,6 +31,10 @@ const Translator = () => {
     }, []);
 
     const translateText = async () => {
+        if (!sourceLanguage || !targetLanguage) {
+            alert('Please select languages.');
+            return;
+        }
 
         const encodedParams = new URLSearchParams();
         encodedParams.set('source_language', sourceLanguage);
